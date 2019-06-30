@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+{% include "header.html" %}
+<head>
+    <link type=text/css rel=stylesheet href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+<h2 style="color:rgb(0, 9, 94)">Are you sure you want to delete {{places.name}} from {{places.country.name}}?</h2>
+<form action="{{url_for('deleteplaces' ,country_id=country_id, places_id=places_id)}}" method="POST">
+  <input  class="delete" type="submit" value ="Delete">
+  <a href = "{{url_for('showCountry',country_id=country_id)}}"><input class="delete" type="button" value="Cancel"></a>
+  </br></br>
+</form>
+</body>
+</html>

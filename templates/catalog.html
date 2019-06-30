@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    {% include "header.html" %}
+  <head>
+    <link type=text/css rel=stylesheet href="{{url_for('static', filename='styles.css')}}">
+  </head>
+  <body>
+   <nav>
+    <h3 style="color: rgb(218,218,220);font-size:23px;padding-left: 32px;font-family: sans-serif;font-weight: 500 ">Countries</h3>
+    <hr>
+     <ul>
+      {% for i in country %}
+      <li><a href = "{{url_for('showCountry', country_id = i.id)}}"
+        style="color:rgb(218,218,220);font-size: 20px;font-weight: 500;
+        font-family: sans-serif">{{i.name}}</a>
+      </li>
+      {% endfor %}
+     </ul>
+   </nav>
+   <article>
+   <h3 style="color:rgb(72, 73, 160)">Recently Added places</h3>
+   <p><a href = "{{url_for('newPlace')}}" style="color:orangered;text-decoration:underline">Add places</a></br></p>
+   <ul style="list-style-type:square;">
+    {% for i in places %}
+     <li>
+      Place <a href = "{{url_for('showPlaces',country_id=i.country_id, places_id=i.id)}}" style="color :rgb(49, 59, 197)">{{i.name}}</a>
+      is added to <a href = "{{url_for('showPlaces',country_id=i.country_id, places_id=i.id)}}" style="color:rgb(49, 59, 197)">{{i.country.name}}</a>
+     </li>
+    {% endfor %}
+   </ul>
+   </article>
+  </body>
+</html>

@@ -74,16 +74,36 @@ $ Python project.py
 ### JSON endpoints
 #### Returns JSON of all country
 
+*  to return json response of the list of countries present in the database can be obtained from the appending following url to localhost:8000 in browser.
+
 ```
 /catalog.json
 ```
 #### Returns JSON of specific country
+
+* to return json response of the list of specific country present in the database can be obtained from the appending following url to localhost:8000 in browser.
 
 ```
 /catalog/country<int:country_id>/json
 ```
 #### Returns JSON of specific places in a country
 
+* to return json response of the list of places present in the database can be obtained from the appending following url to localhost:8000 in browser.
 ```
 /catalog/country<int:country_id>/palces<int:places_id>/json
+```
+### TroubleShooting
+* There can be the foolowing error after clonig the project into /vagrant directory and running it.
+```
+/usr/bin/env: ‘python3\r’: No such file or directory
+
+```
+The problem are your line ending characters. Your file was created or edited on a Windows system and uses Windows/DOS-style line endings (CR+LF), whereas Linux systems like Ubuntu require Unix-style line endings (LF).
+
+This can be resolved by following steps.
+
+```
+sudo apt install dos2unix
+dos2unix /PATH/TO/YOUR/WINDOWS_FILE
+
 ```

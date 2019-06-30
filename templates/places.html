@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  {% include "header.html" %}
+<head>
+ <link type=text/css rel=stylesheet href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+<div class="places">
+  <h2 style="color:orangered" class="inline">{{places.name}}</h2>
+  &nbsp
+  <h3 style="color:black" class="inline">- {{country.name}}</a></h3>
+  <h3 style="color:rgb(0, 9, 94)"class="description">{{places.description}}</h3>
+  </br>
+  <a href = "{{url_for('editplaces', country_id=country.id, places_id=places.id)}}" style="color:rgb(49, 59, 197)";"text-decoration:underline">Edit</a>
+  &nbsp|&nbsp
+  <a href = "{{url_for('deleteplaces', country_id=country.id, places_id=places.id)}}" style="color:rgb(49, 59, 197)";"text-decoration:underline">Delete</a>
+</div>
+</body>
+</html>
