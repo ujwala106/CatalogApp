@@ -6,12 +6,12 @@
   </head>
   <body>
    <nav>
-    <h3 style="color: rgb(24, 24, 39);font-size:23px;padding-left: 32px;font-family: sans-serif;font-weight: 500 ">Countries</h3>
+    <h3 style="color: rgba(183, 183, 194);font-size:23px;padding-left: 32px;font-family: sans-serif;font-weight: 500 ">Countries</h3>
     <hr>
      <ul>
       {% for i in country %}
       <li><a href = "{{url_for('showCountry', country_id = i.id)}}"
-        style="color:rgb(24, 24, 39);font-size: 20px;font-weight: 500;
+        style="color:rgb(183, 183, 194);font-size: 20px;font-weight: 500;
         font-family: sans-serif">{{i.name}}</a>
       </li>
       {% endfor %}
